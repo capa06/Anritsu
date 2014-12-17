@@ -1,0 +1,2 @@
+ bwmhz,dmode,rfband,earfcn,rsepre,pa,pb,chtype,snr,dlnprb,dlrbstart,ulmcs,ulnprb,ulrbstart,tm,txants,pmi,  schedtype,  nhrtx,riv,dlthr_Mbps,dlbler,cqi,nack,dtx,ulthr_Mpbs,ulbler,dlthr_cw1,dlthr_cw2 
+10 , FDD , 1 , 300.0 , -72.8 , -3 , 1 , AWGN , 30.0 , 50 , 0 , 23 , 50 , 0 , 3 , 2 , NONE , STATIC , 4 ,    0  1  2  3  , 71.3720703125 , 0.0000 , 15 , 0 , 0 , 24.859375 , 0.0000 , 35.685546875 , 35.685546875
