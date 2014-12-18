@@ -1,4 +1,3 @@
-__author__ = 'chuyiq'
 # Sample MT8870A automation Python script for remote MT8870A control using sockets
 # v0 - Juan Hidalgo (juan.hidalgo@anritsu.com) - Anritsu EMEA, Marketing
 # Based on MD8475A automation by Patrick Chiang, Anritsu, parick.chiang@anritsu.com
@@ -17,16 +16,16 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP) # Crea
 s.settimeout(120) # Sets timeout
 s.connect((ip, port))
 print("Connected to " + ip + ":" + str(port))
-#cmd = '*IDN?\n'
 
-s.send('*IDN?\n')
+s.send("*IDN?\n")
 
 l = True
 while l == True:
     data = s.recv(100)
-    print(data, 'EOF')
-
-    find_this = '\n'
+    print data, 'EOF'
+    
+    find_this = "\n"
     if find_this in data:
         l = False
+
 print("End")
