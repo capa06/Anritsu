@@ -29,7 +29,7 @@ import sys
 import logging
 import time
 import re
-import visa
+from visa import *
 
 # ********************************************************************
 
@@ -63,7 +63,7 @@ from vxi_11 import vxi_11_connection
 from CfgError import CfgError
 
 
-rm=visa.ResourceManager()
+rm=ResourceManager()
 
 
 
@@ -105,7 +105,8 @@ class Anr(object):
         self.dev = Anritsu_MT8820C(ip_addr, timeout=20)
         ip_socket='TCPIP0::'+ip_addr+'::56001::SOCKET'
         self.dev=rm.open_resource(ip_socket,read_termination='\n')
-
+        #self=rm.open_resource(ip_socket,read_termination='\n')
+        #self.dev = rohde_and_schwarz_CMW500(ip_addr, timeout=20)
         self.dev.write("*CLS")
 
         self.resultsFile = ""
@@ -249,6 +250,7 @@ class Anr(object):
         self.dev.write(command)
 
         self.wait_for_completion()
+
 
 
 
