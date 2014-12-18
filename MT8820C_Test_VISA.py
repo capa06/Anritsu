@@ -6,7 +6,7 @@ import visa, os, time
 import csv
 rm = visa.ResourceManager()
 anr = rm.open_resource('TCPIP0::10.21.141.234::56001::SOCKET', read_termination='\n')
-
+path='/github/report/'
 print(time.strftime('%d%m%Y-%H%M'))
 print(anr.ask('*IDN?'))
 idn=anr.ask('*IDN?')
@@ -44,8 +44,8 @@ Ndl_offset={'1':0,'2':600,'3':1200,'4':1950,'5':2400,'6':2650,'7':2750,'8':3450,
 #anr.write('ANTCONFIG SINGLE')
 #anr.write('ANTCONFIG RX_DIVERSITY')
 #anr.write('ANTCONFIG TX_DIVERSITY')
-anr.write('ANTCONFIG OPEN_LOOP')
-#anr.write('ANTCONFIG CLOSED_LOOP_SINGLE')
+
+#anr.write('ANTCONFIG CLOSED_LOOP_SINanr.write('ANTCONFIG OPEN_LOOP')GLE')
 #anr.write('ANTCONFIG CLOSED_LOOP_MULTI')
 
 anr.write('OBW_MEAS ON')
@@ -145,12 +145,12 @@ while(1):
         riv=' '+anr.ask('RVCODING? 1')+' '+anr.ask('RVCODING? 2')+' '+anr.ask('RVCODING? 3')+' '+anr.ask('RVCODING? 4')
         testresult=[bwmhz,',', dmode,',',rfband,',',earfcn,',',rsepre,',',pa,',',pb,',',chtype,',',snr,',',dlnprb,',',dlrbstart,',',ulmcs,',',ulnprb,',',ulrbstart,',',tm,',',txants,',',pmi,',',schedtype,',',nhrtx,',',riv,',',dlthr_Mbps,',',dlbler,',',cqi,',',nack,',',dtx,',',ulthr_Mbps,',',ulbler,',',dlthr_cw1,',',dlthr_cw2]
 
-        title=['Throughput(kbps),tput(%),tputCD1,tputCD1(%),tputCD2,tputCD2(%),bler,bler(EXP),error_count,nack,dtx,no_sample']
+        #title=['Throughput(kbps),tput(%),tputCD1,tputCD1(%),tputCD2,tputCD2(%),bler,bler(EXP),error_count,nack,dtx,no_sample']
         #print(title+'\n'+result)
-        f=open('LTE_'+dmode+'_MT8820C_TestConf_testID_'+timestr+'.txt','w')
+        f=open(path+'LTE_'+dmode+'_MT8820C_TestConf_testID_'+timestr+'.txt','w')
         f.write('Timestamp\t\t:'+timestr+'\nRAT\t\t\t:'+std+'_'+dmode+'\n'+'Testtype\t\t:'+std+'_'+dmode+'_'+chtype+'\n'+'Testerinfo\t\t:'+idn+' '+mciv+' '+mcov+'\n')
         f.close()
-        with open('LTE_'+dmode+'_'+'MT8820C_TestMeas_testID_'+timestr+'.csv','w',newline='') as csvfile:
+        with open(path+'LTE_'+dmode+'_'+'MT8820C_TestMeas_testID_'+timestr+'.csv','wb') as csvfile:
             csvwriter=csv.writer(csvfile,delimiter=' ',quotechar=' ',quoting=csv.QUOTE_MINIMAL)
             csvwriter.writerow(testparame)
             csvwriter.writerow(testresult)
