@@ -1,6 +1,7 @@
 __author__ = 'chuyiq'
+
 '''
-Simple Test on Anritsu8820
+Test on Anritsu8820
 '''
 import visa, os, time
 import csv
