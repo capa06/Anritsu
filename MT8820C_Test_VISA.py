@@ -3,7 +3,7 @@ __author__ = 'chuyiq'
 '''
 Test on Anritsu8820
 '''
-import visa, os, time
+import visa, os, time,pyvisa
 import csv
 rm = visa.ResourceManager()
 anr = rm.open_resource('TCPIP0::10.21.141.234::56001::SOCKET', read_termination='\n')
