@@ -26,9 +26,6 @@ __author__ = 'chuyiq'
 
 import os
 import sys
-import logging
-import time
-import re
 
 # ********************************************************************
 
@@ -57,6 +54,3 @@ sys.path.append(os.sep.join(os.environ['PL1TESTBENCH_ROOT_FOLDER'].split(os.sep)
 
 # ********************************************************************
 
-from vxi_11 import vxi_11_connection
-
-from CfgError import CfgError
