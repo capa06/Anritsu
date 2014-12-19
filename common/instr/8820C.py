@@ -63,7 +63,7 @@ from vxi_11 import vxi_11_connection
 from CfgError import CfgError
 
 
-rm=ResourceManager()
+rm = ResourceManager()
 
 
 
@@ -578,10 +578,11 @@ class Anr(object):
 
 
 if __name__ == '__main__':
-    anr=Anr('anr','10.21.141.234')
+    anr=Anr('MT8820C','10.21.141.234')
     #anr.write('*IDN?')
     #anr.read('*IDN?')
     print anr.ask('*IDN?')
     anr.write('CALLSA')
+    print anr.ask('*ESR?')
     anr.close()
     #pass

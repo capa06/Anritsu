@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+-<cm500_config> -<common>
+<!-- routing configuration for SISO scenario -->
+ <field name="routing_siso">"RF1C,RX1,RF1C,TX1"</field>
+<!-- routing configuration for MIMO 2x2 scenario {'RF1C,RX1,RF1C,TX1,RF3C,TX2', 'RF1C,RX1,RF1C,TX1,RF2C,TX2'} -->
+ <field name="routing_mimo2x2">"RF1C,RX1,RF1C,TX1,RF3C,TX2"</field>
+<!-- routing configuration for MIMO 4x2 scenario {'RF1C,RX1,RF1C,TX1,RF3C,TX4'} -->
+ <field name="routing_mimo4x2">"RF1C,RX1,RF1C,TX1,RF3C,TX4"</field>
+<!-- routing configuration for CA SISO scenario -->
+ <field name="routing_ca_siso">"RF1C,RX1,RF1C,TX1,RF3C,TX2"</field>
+<!-- routing configuration for CA MIMO 2x2 scenario {'''} -->
+ <field name="routing_ca_mimo2x2">"RF1C,RX1,RF1C,TX1,RF2C,TX3,RF3C,TX2,RF4C,TX4"</field>
+<!-- security milenage -->
+ <field name="milenage">"OFF"</field>
+<!-- security IALgorithm -->
+ <field name="ialgorithm">"S3G"</field> <field name="cell_srs">"OFF"</field>
+<!-- enable/disable advanced settings for PRACH -->
+ <field name="enable_ulpwrctrl_eas">"ON"</field>
+<!-- open loop target power dBm-->
+ <field name="olnpwr">0</field>
+<!-- closed loop target power dBm-->
+ <field name="tcp_cltrpwr">-20</field>
+<!-- select tpc type: closed loop/open loop-->
+ <field name="tcp_set">"CLO"</field>
+<!-- uplink max power dBm-->
+ <field name="pmax">24</field>
+<!-- open loop target power dBm for advanced settings-->
+ <field name="eas_olnpwr">10</field>
+<!-- closed loop target power dBm for advanced settings-->
+ <field name="eas_tcp_cltrpwr">10</field>
+<!-- select tpc type: closed loop/open loop for advanced settings-->
+ <field name="eas_tcp_set">"CLO"</field>
+<!-- uplink max power dBm for advanced settings-->
+ <field name="eas_pmax">24</field> <field name="eas_rspower">18</field> <field name="eas_pirpower">-104</field> <field name="eas_pnpusch">-85</field> <field name="eas_pcalpha">"DOT8"</field>
+<!-- Connection -->
+ <field name="ghopping">"OFF"</field> <field name="uecat">4</field> <field name="uecat_reported">"ON"</field> <field name="dpcycle">"P064"</field> <field name="aseission">"NS01"</field> <field name="fcoefficient">"FC4"</field>
+<!-- Connection TEST mode / Data Application mode -->
+ <field name="ctype">"TEST"</field> <field name="tmode">"ON"</field> <field name="rlcmode">"UM"</field>
+<!-- RRCReconfig/SIBReconfig-->
+ <field name="sibreconf">"RRCR"</field>
+<!-- Keep RRC config-->
+ <field name="krrc">"ON"</field>
+<!-- MAC -->
+ <field name="dlpadding">"ON"</field> <field name="dleinsertion">0</field> <field name="sdnspco">"OFF"</field> </common> -<pcc>
+<!-- external attenuation -->
+ <field name="eatt_in1">0</field> <field name="eatt_out1">0</field> <field name="eatt_out2">0</field>
+<!-- downlink power levels -->
+ <field name="pss_poffest">-3</field> <field name="sss_poffest">-3</field> <field name="pbch_poffest">0</field> <field name="pcfich_poffest">0</field> <field name="phich_poffest">0</field> <field name="pdcch_poffest">-3</field> <field name="ocng">"ON"</field> <field name="cellid">0</field> <field name="cqi_index">14</field> </pcc> -<scc>
+<!-- external attenuation -->
+ <field name="eatt_in1">0</field> <field name="eatt_out1">0</field> <field name="eatt_out2">0</field>
+<!-- downlink power levels -->
+ <field name="pss_poffest">-3</field> <field name="sss_poffest">-3</field> <field name="pbch_poffest">0</field> <field name="pcfich_poffest">0</field> <field name="phich_poffest">0</field> <field name="pdcch_poffest">-3</field> <field name="ocng">"ON"</field> <field name="cellid">1</field> <field name="cqi_index">8</field> <field name="scc_amode">"AUTO"</field> </scc> </cm500_config>
