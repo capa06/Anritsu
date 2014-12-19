@@ -102,7 +102,7 @@ class Anr(object):
 
         logging.debug ('init-routine')
 
-        self.dev = Anritsu_MT8820C(ip_addr, timeout=20)
+        #self.dev = Anritsu_MT8820C(ip_addr, timeout=20)
         ip_socket='TCPIP0::'+ip_addr+'::56001::SOCKET'
         self.dev=rm.open_resource(ip_socket,read_termination='\n')
         #self=rm.open_resource(ip_socket,read_termination='\n')
@@ -203,9 +203,11 @@ class Anr(object):
 
     def close(self):
 
-        self.write(r"GTL")
+        #self.write(r"GTL")
 
-        self.dev.disconnect()
+        #self.dev.disconnect()
+        self.write('GTL')
+        self.dev.close()
 
 
 
@@ -252,8 +254,11 @@ class Anr(object):
         self.wait_for_completion()
 
 
-
-
+    def ask(self,command):
+        logger=logging.getLogger('%s.write' % self.name)
+        logger.debug("  %s write command \"%s\"" % (self.name,command))
+        reading=self.dev.ask(command)
+        return reading
     def preset(self):
 
         self.write("SYSTem:RESet:ALL")
@@ -272,8 +277,8 @@ class Anr(object):
 
         self.dev.write(command)
 
-        reading = self.dev.read()[2].strip()
-
+        #reading = self.dev.read()[2].strip()
+        reading= self.dev.read()
         lettercount = 25
 
         readingshort = reading[0:lettercount]
@@ -573,7 +578,10 @@ class Anr(object):
 
 
 if __name__ == '__main__':
-
-
-
-    pass
+    anr=Anr('anr','10.21.141.234')
+    #anr.write('*IDN?')
+    #anr.read('*IDN?')
+    print anr.ask('*IDN?')
+    anr.write('CALLSA')
+    anr.close()
+    #pass
