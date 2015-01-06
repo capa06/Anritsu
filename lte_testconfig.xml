@@ -1,0 +1,54 @@
+
+
+<test_config>
+	<opts>
+		<!-- Log level choices 'CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG' -->
+	    <field name='log' >"DEBUG"</field>
+	   	<!-- choices 'LTE_FDD', 'LTE_TDD','LTE_CA', 'WCMDA', 'GSM' -->
+		<field name='rat'>"LTE_FDD"</field>
+		<!-- IP address of the tester -->
+		<field name='testerip'>"10.21.141.234"</field>
+		<!-- Tester tag {'cmw500'} }-->
+		<field name='testername'>"MT8820C"</field>
+		<!-- Modem Control Interface, {'AT', 'STDIN', 'ADB', 'KMT', "socket://<url>:<port>" } -->
+		<field name='ctrlif'>"AT"</field>
+		<!-- List of test Id's to execute -->
+		<field name='testplan'>"lte/common/testplan/lte_fdd_percl.xml"</field>
+		<!-- enable/disable USIM emulator -->
+		<field name='usimemu'>0</field>
+		<!-- enable/disable power supply -->
+		<field name='psu'>0</field>
+		<!-- enable/disable power measurements -->
+		<field name='pwrmeas'>0</field>
+		<!-- IP address of LAN-GPIB switch for power supply -->
+		<!-- only applicable if power supply or power measurements are enabled -->
+		<field name='psugwip'>"1.1.1.1"</field>
+		<!-- GPIB address of power supply connected to LAN-GPIB switch -->
+		<field name='psugpib'>5</field>
+		<!-- Enable Switched Cabinet Data Unit -->
+		<field name='scdu'>0</field>
+		<!-- SCDU IP address -->
+	    <field name='scdu_ip'></field>
+		<!-- SCDU mapped modem port -->
+  		<field name='scdu_port'></field>
+		<!-- SCDU userID -->
+  		<field name='scdu_uid'></field>
+		<!-- SCDU password -->
+  		<field name='scdu_pwd'></field>
+		<!-- reboot the modem before the test -->
+  		<field name='reboot'>0</field>
+		<!-- enable/disable of modem logging -->
+		<field name='msglog'>0</field>
+		<!-- Flag [0/1] to indicate if remote Database needs updating or not -->
+		<field name='remoteDB'>1</field>
+		<!-- Remote DB host / ip address -->
+		<field name='remoteDBhost'>"ukdc-db-pl1testbench-dev"</field>
+		<!-- Remote DB User ID -->
+		<field name='remoteDBuid'>"testbench-read"</field>
+		<!-- Remote DB Password (enc) -->
+		<field name='remoteDBpwd'>"""<![CDATA[BZh91AY&SYB\xe0\xe6\xf1\x00\x00\x01\x0f\x00\x00\xc0\x02\x00L\x00\x00\x81 \x00!\x88\xc9\xa1\x0c\x08\xe9\xad\xcb|]\xc9\x14\xe1BA\x0b\x83\x9b\xc4]]>"""</field>
+		<!-- Remote DB Name -->
+		<field name='remoteDBname'>"pl1testbench"</field>
+	</opts>
+</test_config>
+

@@ -578,11 +578,18 @@ class Anr(object):
 
 
 if __name__ == '__main__':
+    """
     anr=Anr('MT8820C','10.21.141.234')
     #anr.write('*IDN?')
     #anr.read('*IDN?')
     print anr.ask('*IDN?')
     anr.write('CALLSA')
     print anr.ask('*ESR?')
+    print anr.ask('*STB?')
+    anr.write('CALLSO')
+    anr.write('GTL')
+    #print anr.ask('*ESR2?')
+
     anr.close()
-    #pass
+    """
+    pass
